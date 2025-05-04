@@ -21,16 +21,16 @@ The system uses an array of product objects with the following structure:
 
 ```javascript
 {
-    productId: Number,            // Unique identifier for the product
-    name: String,                 // Product name
-    description: String,          // Product description
-    price: Number,                // Product price
-    stock: Number,                // Available quantity
-    category: String,             // Product category
-    tags: Array<String>,          // Array of tags
-    discount: {                   // Discount object (or null if no discount)
-        type: String,             // "fixed" or "percentage"
-        value: Number             // Amount or percentage of discount
+    productId: Number,        
+    name: String,             
+    description: String,          
+    price: Number,               
+    stock: Number,                
+    category: String,            
+    tags: Array<String>,         
+    discount: {                  
+        type: String,            
+        value: Number             
     }
 }
 ```

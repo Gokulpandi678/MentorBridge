@@ -20,16 +20,16 @@ The system uses an array of student objects with the following structure:
 
 ```javascript
 {
-    studentId: Number,           // Unique identifier for the student
-    name: String,                // Student name
-    grade: Number,               // Student grade level
-    courses: Array<String>,      // Array of enrolled courses
-    attendance: {                // Attendance record object
-        "DD-MM-YYYY": String     // Date: "present" or "Absent"
+    studentId: Number,          
+    name: String,                
+    grade: Number,               
+    courses: Array<String>,      
+    attendance: {                
+        "DD-MM-YYYY": String     
     },
-    hobbies: {                   // Hobbies categorized
-        "sports": Array<String>, // Sports activities
-        "music": Array<String>   // Musical interests
+    hobbies: {                   
+        "sports": Array<String>, 
+        "music": Array<String>  
     }
 }
 ```

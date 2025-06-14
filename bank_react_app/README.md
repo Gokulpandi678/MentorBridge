@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# 🏦 React Banking Dashboard Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a responsive **Banking Dashboard** application built using **React** and **React-Bootstrap**. It allows users to log in, view account summaries, see transaction history, and make new transactions — all from a single, dynamic dashboard interface.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🔐 **User Login / Logout** system
+- 📄 **Account Summary** with masked account number and current balance
+- 📜 **Transaction List** display (component integrated via module)
+- 💰 **New Transaction** entry functionality (component integrated via module)
+- 🧭 **Navigation Buttons** to switch views dynamically within the dashboard
+- ✅ **Login State Control**: Buttons are disabled until the user logs in
+- 🎉 **Toast Notifications** for user feedback (login,logout,payment confirmation)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Components Overview
 
-### `npm test`
+### Dashboard
+Main layout that manages user navigation and login state. Includes:
+- Top navigation with Login/Logout button
+- Buttons to switch between views: Account Summary, Transaction List, New Transaction
+- Conditional rendering of content based on selected menu
+- Uses `TransactionContext` for shared state
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### AccountSummary
+Displays logged-in user's details:
+- Masked Account Number: e.g., `xxxxxx1234`
+- Name
+- Total Balance
+Fetches data using `findCustomerByAccountNumber` from context.
 
-### `npm run build`
+### TransactionList
+Referenced in code (not uploaded), likely displays:
+- Transaction type (credit/debit)
+- Amount
+- Description and timestamp
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### NewTransaction
+Referenced in code (not uploaded), likely includes:
+- Input fields for amount, recipient, type
+- Submission to update transaction context or state
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### LoginForm
+A modal that allows users to log in. Triggered when the **Login** button is clicked and `isLoggedIn` is false. Upon successful login, it updates the `currentUser` in context and closes the modal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠 Technologies Used
 
-### `npm run eject`
+- React
+- React-Bootstrap
+- React Context API
+- Toastify (for notifications)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📸 UI Preview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Dashboard Before Login
+![Dashboard before login](./screenshots/Dashboard.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Login Form
+![Login Form](./screenshots/Login.png)
 
-## Learn More
+### Dashboard After Login
+![Dashboard after login](./screenshots/after_login.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Account Summary Page
+![Account Summary Page](./screenshots/account_summary.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Inital Transaction Page
+![Inital Transaction Page](./screenshots/before_transaction.png)
 
-### Code Splitting
+### New Transaction Page
+![New Transaction Page](./screenshots/new_transaction.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Transactin Successful 
+![Transactin Successful](./screenshots/transaction_successful.png)
 
-### Analyzing the Bundle Size
+### After Transaction Page
+![After Transaction Page](./screenshots/after_transaction.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Recivers Transaction page
+![Recivers Transaction page](./screenshots/berlin_transaction.png)
 
-### Making a Progressive Web App
+### Some Validations
+![Login Validations](./screenshots/login_validation.png)
+![Payment validation](./screenshots/insufficient_debit.png)
+![Payment validation](./screenshots/insufficient_message.png)
+> - Dashboard before login
+> - Login modal
+> - Account Summary view
+> - Disabled buttons before login
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## ▶️ How It Works
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. The user opens the Dashboard.
+2. If not logged in, the user is prompted to log in via a modal.
+3. Once logged in:
+   - User details are stored in context.
+   - Navigation buttons become enabled.
+4. The user can now:
+   - View account details
+   - See previous transactions
+   - Make a new transaction
+5. User can click **Logout**, which:
+   - Resets view to home
+   - Shows a toast confirming logout
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

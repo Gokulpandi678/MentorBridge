@@ -1,0 +1,41 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.bg-image{
+  background-image: url('./assets/bg-intro-desktop.svg');
+  background-repeat: none;
+  background-size: cover;
+}
+
+.mr-n3 {
+  margin-right: -3rem !important;
+}
+
+.scale-105{
+    transform: scale(1.5);
+}
+
+.hover-text-blue{
+    &:hover {
+        color: #3D5AFE;
+    }
+}
+
+.bg-gray-400{
+  background-color: rgb(241, 241, 241);
+}
+
+.p-10{
+  padding: 100px;
+}
+
+.fs-10{
+  font-size: 12px;
+}
+
+.bg-gray-200{
+  background-color: rgb(253, 249, 249);
+}
+
+.bg-darkblue{
+  background-color: rgb(45, 49, 78);
+}
